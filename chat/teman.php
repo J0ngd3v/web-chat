@@ -9,9 +9,7 @@ if(!isset($_SESSION['log_success'])){
 }
 require "layout_header.php";
 ?>
-  
- 
-   
+    
 <?php
     require "layout_footer.php";
 ?>

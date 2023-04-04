@@ -36,8 +36,8 @@ $result = mysqli_query($db, $query);
                   <p class="text-gray-600 text-sm"><?= $datas['chat']?></p>
                   <p class="text-gray-400 text-xs"><?= $datas['waktu']?></p>
                 </div>
-              </div>
-              <!-- end chat lawan -->  
+        </div>
+        <!-- end chat lawan -->  
     <?php } ?>                     
 <?php } ?>
 

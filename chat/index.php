@@ -5,8 +5,6 @@ if(!isset($_SESSION['log_success'])){
     header("Location: ../auth_login.php");
     exit;
 }
-
-
 ?>
 
 <?php require "layout_header.php"; ?>

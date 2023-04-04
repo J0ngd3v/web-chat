@@ -32,8 +32,10 @@ if(isset($_POST['update_profile'])){
         echo "<script>alert('Failed to update profile.');</script>";
     }
 }
-$bio_placeholder = is_array(isset($user_profile)) ? $user_profile : 'Tuliskan bio mu disini';
-$email_placeholder = is_array(isset($user_profile)) ? $user_profile : 'Masukkan Email';
+
+// validasi bio wes ditulis opo durung
+$bio_placeholder = isset($user_profile['bio']) ? $user_profile['bio'] : 'Tuliskan bio mu disini';
+$email_placeholder = isset($user_profile['bio']) ? $user_profile['bio'] : 'Masukkan Email';
 require "layout_header.php";
 ?>
   

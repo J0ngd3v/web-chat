@@ -26,17 +26,40 @@
     right: 20px;
     z-index: 1000;
   }
-
+  .typewriter {
+      overflow: hidden; 
+      border-right: 0.15em solid #333; 
+      white-space: nowrap; 
+      margin: 0 auto; 
+      letter-spacing: 0.15em; 
+      animation: typing 3.5s steps(40, end), blink .75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+   
+    @keyframes blink {
+      from, to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: #333;
+      }
+    }
     </style>
   </head>
   <body>
   <div class="fixed inset-0 z-50 bg-white flex items-center justify-center" id="loading">
-    <svg class="animate-spin h-10 w-10 text-gray-900" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm6-8a6 6 0 016 6H6V4zm2 14a6 6 0 01-6-6h6v6z"></path>
-    </svg>
-    <h1 class="ml-3 text-gray-900 text-lg font-semibold tracking-wide">Loading...</h1>
+    <img width="80px" src="../img/pngwing.com.png" alt="">
+    <h1 class="ml-3 text-gray-900  font-semibold tracking-wide ">Sabar Loading <span class="typewriter">....</span></h1>
   </div>
+  
   <nav class="bg-white bg-opacity-50 backdrop-blur-lg fixed top-0 w-full">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -117,21 +140,23 @@
 
       <div id="mobile-menu" class="hidden md:hidden">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="#"
-            class="text-gray-800 hover:text-gray-600 block font-medium"
-            >Settings</a
-          >
-          <a
-            href="#"
-            class="text-gray-800 hover:text-gray-600 block font-medium"
-            >logout</a
-          >
-          <a
-            href="#"
-            class="text-gray-800 hover:text-gray-600 block font-medium"
-            >Lapor</a
-          >
+        <?php if(isset($_GET['url']) && $_GET['url'] == "Home"){?>
+                  <a href="#" class="text-gray-800 hover:text-gray-600 font-bold ">Home</a>
+                <?php }else{?>
+                  <a href="index.php?url=Home" class="text-gray-800 hover:text-gray-600 font-medium ">Home</a>
+                <?php }?>
+                <?php if(isset($_GET['url']) && $_GET['url'] == "Setting"){?>
+                  <a href="setting_user.php?url=Setting" class="text-gray-800 hover:text-gray-600 font-bold ">Setting</a>
+                <?php }else{?>
+                  <a href="setting_user.php?url=Setting" class="text-gray-800 hover:text-gray-600 font-medium ">Setting</a>
+                <?php }?>
+
+                <?php if(isset($_GET['url']) && $_GET['url'] == "Teman"){?>
+                  <a href="teman.php?url=Teman" class="text-gray-800 hover:text-gray-600 font-bold ">Teman</a>
+                <?php }else{?>
+                  <a href="teman.php?url=Teman" class="text-gray-800 hover:text-gray-600 font-medium ">Teman</a>
+                <?php }?>
+                  <a href="../logout.php"class="text-gray-800 hover:text-gray-600 font-medium">Logout</a>
         </div>
       </div>
 </nav>
